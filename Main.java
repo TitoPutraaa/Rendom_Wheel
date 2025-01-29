@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Main {
     static Scanner sc = new Scanner(System.in);
     static String[] arr_value;
+    static String[] history = new String[arr_value.length];
 
     // input value method 
     static String[] input() {
@@ -17,7 +18,13 @@ public class Main {
         return value;
     }
 
-    static void spin() {
+    static String[] spin() {
+        if (arr_value == null) {
+            System.out.println("plis input name first");
+            return new String[] {""};
+        }
+        int rendom = (int)(Math.random() *arr_value.length);
+        arr_value[rendom] = "";
         
     }
 
