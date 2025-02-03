@@ -15,6 +15,10 @@ public class Main {
         linklst.add(value);
         input();
     }
+
+    static void spin() {
+        
+    }
     public static void main(String[] args) {
         do {
             
