@@ -17,9 +17,22 @@ public class Main {
     }
 
     static void spin() {
-        
+        int rendom = (int) (Math.random() * linklst.size());
+        System.out.print("spin Y/N ? : ");
+        String spin = sc.next();
+        if (spin.equalsIgnoreCase("N")) {
+            return;
+        }
+        System.out.println("=== " + linklst.get(rendom) + " ===");
+        System.out.print("delate " + linklst.get(rendom) + "? Y/N : ");
+        String del = sc.next();
+        if (del.equalsIgnoreCase("y")) {
+            linklst.remove(rendom);
+        }
+        System.out.println(linklst);
+        spin();
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) {    
         do {
             
             System.out.println("\n    MENU");
@@ -35,10 +48,12 @@ public class Main {
                 System.out.println("type 'DONE' to submit");
                 input();
                 System.out.println(linklst);
+                // linklst.remove(0);
+                // System.out.println(linklst);
                 
                 break;
             case 2:
-                
+                spin();
                 break;
                 case 3:
                 
