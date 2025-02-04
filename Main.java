@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Main {
     static LinkedList<String> linklst = new LinkedList<>();
+    static LinkedList<String> history = new LinkedList<>();
     static Scanner sc = new Scanner(System.in);
     static String value;
 
@@ -26,20 +27,20 @@ public class Main {
         System.out.println("=== " + linklst.get(rendom) + " ===");
         System.out.print("delate " + linklst.get(rendom) + "? Y/N : ");
         String del = sc.next();
+        String hisVar = linklst.get(rendom);
         if (del.equalsIgnoreCase("y")) {
             linklst.remove(rendom);
         }
         System.out.println(linklst);
+        history.add(hisVar);
         spin();
     }
 
-
     public static void main(String[] args) {    
         do {
-            
-            System.out.println("\n    MENU");
-            System.out.println("1 : NAME INPUT ");
-            System.out.println("2 : SPIN");
+        System.out.println("\n    MENU");
+        System.out.println("1 : NAME INPUT ");
+        System.out.println("2 : SPIN");
         System.out.println("3 : HISTORY");
         System.out.println("4 : EXIT");
         System.out.print("PICK : ");
@@ -50,21 +51,18 @@ public class Main {
                 System.out.println("type 'DONE' to submit");
                 input();
                 System.out.println(linklst);
-                // linklst.remove(0);
-                // System.out.println(linklst);
-                
                 break;
             case 2:
                 spin();
                 break;
-                case 3:
-                
+            case 3:
+                System.out.println(history);
                 break;
-                case 4:
+            case 4:
                 System.out.println("THANKYOU ;)");
                 return;
                 
-                default:
+            default:
                 break;
             }
         } while (true);
