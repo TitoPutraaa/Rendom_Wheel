@@ -47,7 +47,7 @@ public class Main {
         int pick = sc.nextInt();
         
         switch (pick) {
-            case 1:
+            case 1: 
                 System.out.println("type 'DONE' to submit");
                 input();
                 System.out.println(linklst);
